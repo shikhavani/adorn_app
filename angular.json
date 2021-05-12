@@ -70,7 +70,15 @@
             "polyfills": "apps/adorn/src/polyfills.ts",
             "tsConfig": "apps/adorn/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/adorn/src/favicon.ico", "apps/adorn/src/assets"],
+            "assets": [
+              "apps/adorn/src/favicon.ico", 
+              "apps/adorn/src/assets",
+              {
+                "input": "libs/modules/billbook/src/assets",
+                "glob": "**/*",
+                "output": "assets/billbook"
+              }
+            ],
             "styles": ["apps/adorn/src/styles.scss"],
             "scripts": []
           },
@@ -233,6 +241,138 @@
           "options": {
             "tsConfig": ["libs/api-interfaces/tsconfig.lib.json"],
             "exclude": ["**/node_modules/**", "!libs/api-interfaces/**/*"]
+          }
+        }
+      }
+    },
+    "backend": {
+      "root": "apps/backend",
+      "sourceRoot": "apps/backend/src",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/backend",
+            "main": "apps/backend/src/main.ts",
+            "tsConfig": "apps/backend/tsconfig.app.json",
+            "assets": ["apps/backend/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/backend/src/environments/environment.ts",
+                  "with": "apps/backend/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "backend:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/backend/tsconfig.app.json",
+              "apps/backend/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/backend/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/backend"],
+          "options": {
+            "jestConfig": "apps/backend/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "core-tools": {
+      "projectType": "library",
+      "root": "libs/core/tools",
+      "sourceRoot": "libs/core/tools/src",
+      "prefix": "adorn-app",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/core/tools/tsconfig.lib.json",
+              "libs/core/tools/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/core/tools/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/tools"],
+          "options": {
+            "jestConfig": "libs/core/tools/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "modules-layout": {
+      "projectType": "library",
+      "root": "libs/modules/layout",
+      "sourceRoot": "libs/modules/layout/src",
+      "prefix": "adorn-app",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/modules/layout/tsconfig.lib.json",
+              "libs/modules/layout/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/modules/layout/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/modules/layout"],
+          "options": {
+            "jestConfig": "libs/modules/layout/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "modules-billbook": {
+      "projectType": "library",
+      "root": "libs/modules/billbook",
+      "sourceRoot": "libs/modules/billbook/src",
+      "prefix": "adorn-app",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/modules/billbook/tsconfig.lib.json",
+              "libs/modules/billbook/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/modules/billbook/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/modules/billbook"],
+          "options": {
+            "jestConfig": "libs/modules/billbook/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

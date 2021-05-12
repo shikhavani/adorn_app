@@ -1,0 +1,14 @@
+<header>
+    <mat-toolbar color=primary>
+        <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu.childMenu">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <adorn-app-menu-item #menu [menuList]="modulesList" (menuItemClick)="onModuleClick($event)"></adorn-app-menu-item>
+        <span>Adorn Furnitures</span>
+        <span class="example-spacer"></span>
+    </mat-toolbar>
+</header>
+<main class="height-100 main-layout-body-wrapper">
+    <router-outlet></router-outlet>
+</main>
+

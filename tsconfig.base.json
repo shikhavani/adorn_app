@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@adorn-app/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@adorn-app/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@adorn-app/core/tools": ["libs/core/tools/src/index.ts"],
+      "@adorn-app/modules/layout": ["libs/modules/layout/src/index.ts"],
+      "@adorn-app/modules/billbook": ["libs/modules/billbook/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

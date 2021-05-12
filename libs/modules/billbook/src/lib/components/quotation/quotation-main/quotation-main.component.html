@@ -1,0 +1,18 @@
+<div fxFlexFill fxLayout="column">
+    <div fxFlex="10" class="div-border">
+        <div fxLayout="row" fxLayoutAlign="end center">
+            <button mat-raised-button color="primary" (click)="onCreateQuotation()">Create Quotation</button>
+        </div>
+    </div>
+    <div fxFlex="90">
+        <ag-grid-angular
+            #agGrid
+            fxFlexFill
+            class="ag-theme-material grid-overflow"
+            [rowData]="rowData"
+            [columnDefs]="columnDefs"
+            [gridOptions]="gridOptions"
+        >
+        </ag-grid-angular>
+    </div>
+</div>

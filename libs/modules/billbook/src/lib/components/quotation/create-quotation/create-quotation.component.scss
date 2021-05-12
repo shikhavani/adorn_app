@@ -1,0 +1,7 @@
+:host {
+    .quotation {
+        &-card-wrapper mat-card:nth-child(n) {
+            margin-bottom: 1.5em;
+        }
+    }
+}

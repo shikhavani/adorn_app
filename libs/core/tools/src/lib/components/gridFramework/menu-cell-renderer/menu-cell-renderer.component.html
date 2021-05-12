@@ -1,0 +1,16 @@
+<div
+  fxFill
+  fxLayout="column"
+  fxLayoutAlign="center end"
+>
+  <adorn-app-menu-item
+    #agGridMenu
+    [menuList]="menuList || []"
+  ></adorn-app-menu-item>
+
+  <ng-container *ngIf="menuList?.length > 0">
+    <button mat-menu-item color="primary" [matMenuTriggerFor]="agGridMenu.childMenu">
+        <mat-icon>menu</mat-icon>
+      </button>
+  </ng-container>
+</div>

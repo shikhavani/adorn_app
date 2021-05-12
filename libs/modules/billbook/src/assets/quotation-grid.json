@@ -1,0 +1,27 @@
+[   
+    { 
+        "headerName":"Quotation No.",
+        "field": "id"
+    },
+    { 
+        "headerName":"Customer Name",
+        "field": "name"
+    },
+    { 
+        "headerName":"Customer GST No.",
+        "field": "GSTno"
+    },
+    {
+        "headerName":"Customer Address",
+        "field": "address"
+    },
+    {
+        "headerName":"Created Date",
+        "field": "creationDate"
+    },
+    {
+        "headerName":"",
+        "field": "",
+        "cellRenderer": "menuCellRenderer"
+    }
+]
