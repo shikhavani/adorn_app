@@ -1,0 +1,13 @@
+:host {
+    max-height: 100%;
+    overflow: auto;
+    display: block;
+    .content-wrapper {
+        width: 60%;
+        margin: auto;
+        padding-bottom: 1em;
+        &-title {
+            color: #3f51b5;
+        }
+    }
+}
