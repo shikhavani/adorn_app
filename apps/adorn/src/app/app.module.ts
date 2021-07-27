@@ -14,6 +14,12 @@ const routes: Routes = [
   //     ),
   // },
   {
+    path: 'home',
+    loadChildren: () => import('@adorn-app/modules/home').then(
+      (m) => m.ModulesHomeModule
+    ),
+  },
+  {
     path: 'billbook',
     loadChildren: () => import('@adorn-app/modules/billbook').then(
       (m) => m.ModulesBillbookModule

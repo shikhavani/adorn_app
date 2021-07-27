@@ -50,6 +50,7 @@
     "ag-grid-community": "^25.2.1",
     "class-validator": "^0.13.1",
     "mysql": "^2.18.1",
+    "ng-image-slider": "^2.8.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",

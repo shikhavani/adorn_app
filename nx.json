@@ -19,6 +19,7 @@
     "backend": { "tags": [] },
     "core-tools": { "tags": [] },
     "modules-layout": { "tags": [] },
-    "modules-billbook": { "tags": [] }
+    "modules-billbook": { "tags": [] },
+    "modules-home": { "tags": [] }
   }
 }

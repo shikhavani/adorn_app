@@ -15,17 +15,20 @@ modulesList = [{
     iconName: 'home',
     value: 'home',
     path: '/home'
-  },{
-    displayName: 'Data Grid',
-    iconName: 'grid_on',
-    value: 'data_grid',
-    path: '/dataGrid',
-  },{
-    displayName: 'Layers',
-    iconName: 'layers',
-    value: 'layers',
-    path: '/layers'
-  },{
+  },
+  // {
+  //   displayName: 'Data Grid',
+  //   iconName: 'grid_on',
+  //   value: 'data_grid',
+  //   path: '/dataGrid',
+  // },
+  // {
+  //   displayName: 'Layers',
+  //   iconName: 'layers',
+  //   value: 'layers',
+  //   path: '/layers'
+  // },
+  {
     displayName: 'Bill book',
     iconName: 'receipt',
     value: 'billbook',
@@ -43,17 +46,20 @@ modulesList = [{
       path: '/billbook/invoice',
       callback: this.onModuleClick.bind(this)
     }]
-  },{
-    displayName: 'Performance',
-    iconName: 'bar_chart',
-    value: 'performance',
-    path: '/performance'
-  },{
-    displayName: 'About',
-    iconName: 'info',
-    value: 'about',
-    path: '/about'
-  }]
+  },
+  // {
+  //   displayName: 'Performance',
+  //   iconName: 'bar_chart',
+  //   value: 'performance',
+  //   path: '/performance'
+  // },
+  // {
+  //   displayName: 'About',
+  //   iconName: 'info',
+  //   value: 'about',
+  //   path: '/about'
+  // }
+  ]
   selectedModule = this.modulesList[0];
 
   ngOnInit() {

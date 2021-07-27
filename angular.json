@@ -71,12 +71,18 @@
             "tsConfig": "apps/adorn/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "apps/adorn/src/favicon.ico", 
+              "apps/adorn/src/favicon.ico",
+              "apps/adorn/src/adorn.ico",
               "apps/adorn/src/assets",
               {
                 "input": "libs/modules/billbook/src/assets",
                 "glob": "**/*",
                 "output": "assets/billbook"
+              },
+              {
+                "input": "libs/modules/home/src/assets",
+                "glob": "**/*",
+                "output": "assets/home"
               }
             ],
             "styles": ["apps/adorn/src/styles.scss"],
@@ -372,6 +378,32 @@
           "outputs": ["coverage/libs/modules/billbook"],
           "options": {
             "jestConfig": "libs/modules/billbook/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "modules-home": {
+      "projectType": "library",
+      "root": "libs/modules/home",
+      "sourceRoot": "libs/modules/home/src",
+      "prefix": "adorn-app",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/modules/home/tsconfig.lib.json",
+              "libs/modules/home/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/modules/home/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/modules/home"],
+          "options": {
+            "jestConfig": "libs/modules/home/jest.config.js",
             "passWithNoTests": true
           }
         }

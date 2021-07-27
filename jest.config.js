@@ -6,5 +6,6 @@ module.exports = {
     '<rootDir>/libs/core/tools',
     '<rootDir>/libs/modules/layout',
     '<rootDir>/libs/modules/billbook',
+    '<rootDir>/libs/modules/home',
   ],
 };
